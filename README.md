@@ -1,0 +1,2 @@
+# MyStocks
+Analyse stocks
