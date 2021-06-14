@@ -8,8 +8,8 @@ class CSVReader():
 
 	def isCSVOkay(self, inFile):
 		if not os.path.exists(inFile):
-			log.error('Stock data file not found')
-			log.info('Need an input text file containing CSV data of stocks')
+			print('Stock data file not found')
+			print('Need an input text file containing CSV data of stocks')
 			return False
 		if not self.parseCSV(inFile):
 			return False
@@ -27,8 +27,8 @@ class CSVReader():
 				for stockOption in reqEntries:
 					if(self.stock_data[i][0].lower() == stockOption):
 						if(len(self.stock_data[i]) != reqEntries[stockOption]):
-							log.error('{}'.format(', '.join(self.stock_data[i])[:-2]))
-							log.error('Expecting {} entries for {}'.format(reqEntries[stockOption], stockOption.upper()))
+							print('{}'.format(', '.join(self.stock_data[i])[:-2]))
+							print('Expecting {} entries for {}'.format(reqEntries[stockOption], stockOption.upper()))
 							error = True
 				self.stock_data[i][2] = int(self.stock_data[i][2])
 				if(len(self.stock_data[i]) == 4):
